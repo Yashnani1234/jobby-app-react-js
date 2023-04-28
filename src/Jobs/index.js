@@ -240,6 +240,7 @@ class Jobs extends Component {
 
   onGetJobsView = () => {
     const {jobsData} = this.state
+    console.log(jobsData)
     const noJobs = jobsData.length === 0
     return noJobs ? (
       <div className="no-jobs-container">
@@ -254,7 +255,7 @@ class Jobs extends Component {
     ) : (
       <ul>
         {jobsData.map(eachItem => (
-          <li className="ul-job-items-container">
+          <li className="ul-job-items-container" key={eachItem.id}>
             <JobItem key={eachItem.id} jobData={eachItem} />
           </li>
         ))}
