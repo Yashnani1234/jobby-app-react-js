@@ -240,7 +240,7 @@ class Jobs extends Component {
 
   onGetJobsView = () => {
     const {jobsData} = this.state
-    console.log(jobsData)
+    // console.log(jobsData)
     const noJobs = jobsData.length === 0
     return noJobs ? (
       <div className="no-jobs-container">
