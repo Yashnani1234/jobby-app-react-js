@@ -131,10 +131,8 @@ class AboutJob extends Component {
                     <p className="job-type">{employmentType}</p>
                   </div>
                 </div>
-
                 <p className="package">{packagePerAnnum}</p>
               </div>
-
               <hr className="item-hr-line" />
               <div className="second-part-container">
                 <div className="description-visit-container">
