@@ -36,7 +36,9 @@ const SimilarJobs = props => {
           <MdLocationOn className="location-job-icon" />
           <p className="location-job">{location}</p>
         </div>
-        <p className="job-type">{employmentType}</p>
+        <div>
+          <p className="job-type">{employmentType}</p>
+        </div>
       </div>
     </li>
   )

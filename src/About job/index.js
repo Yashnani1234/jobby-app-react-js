@@ -171,7 +171,7 @@ class AboutJob extends Component {
               <SimilarJobs
                 key={eachItem.id}
                 similarJobData={eachItem}
-                employmentType={jobDataDetails.employmentType}
+                employmentType={jobDataDetails[0].employmentType}
               />
             ))}
           </ul>
