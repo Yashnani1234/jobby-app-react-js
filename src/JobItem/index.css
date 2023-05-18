@@ -1,5 +1,4 @@
-.job-item-container {
-  list-style: none;
+.first-part-container {
   background-color: #272727;
   border-radius: 10px;
   padding: 15px;
@@ -60,13 +59,13 @@
 .location-job-type-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 40%;
 }
 
 .location-icon-location-container {
   display: flex;
   flex-direction: row;
+  padding-right: 30px;
 }
 
 .location-icon {

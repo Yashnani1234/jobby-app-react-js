@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import {MdLocationOn} from 'react-icons/md'
 import {AiFillStar} from 'react-icons/ai'
 import {BiLinkExternal} from 'react-icons/bi'
+import {BsFillBriefcaseFill} from 'react-icons/bs'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import SimilarJobs from '../SimilarJobs'
@@ -125,56 +126,57 @@ class AboutJob extends Component {
                     <MdLocationOn className="location-icon" />
                     <p className="location">{location}</p>
                   </div>
-                  <div className="employment-type-icon-employment-type-container">
+                  <div className="location-icon-location-container">
+                    <BsFillBriefcaseFill className="location-job-icon" />
                     <p className="job-type">{employmentType}</p>
                   </div>
                 </div>
-                <div className="package-container">
-                  <p className="package">{packagePerAnnum}</p>
+
+                <p className="package">{packagePerAnnum}</p>
+              </div>
+
+              <hr className="item-hr-line" />
+              <div className="second-part-container">
+                <div className="description-visit-container">
+                  <h1 className="description-job-heading">Description</h1>
+                  <a className="visit-anchor" href={companyWebsiteUrl}>
+                    Visit <BiLinkExternal />
+                  </a>
                 </div>
+                <p className="description-para">{jobDescription}</p>
+              </div>
+              <h1>Skills</h1>
+              <ul className="ul-job-details-container">
+                {skills.map(eachItem => (
+                  <li className="li-job-details-container" key={eachItem.name}>
+                    <img
+                      className="skill-img"
+                      src={eachItem.imageUrl}
+                      alt={eachItem.name}
+                    />
+                    <p>{eachItem.name}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="company-life-img-container">
+                <div className="life-heading-para-container">
+                  <h1>Life at Company</h1>
+                  <p>{lifeAtCompany.description}</p>
+                </div>
+                <img src={lifeAtCompany.imageUrl} alt="life at company" />
               </div>
             </div>
-            <hr className="item-hr-line" />
-            <div className="second-part-container">
-              <div className="description-visit-container">
-                <h1 className="description-job-heading">Description</h1>
-                <a className="visit-anchor" href={companyWebsiteUrl}>
-                  Visit <BiLinkExternal />
-                </a>
-              </div>
-              <p className="description-para">{jobDescription}</p>
-            </div>
-            <h1>Skills</h1>
-            <ul className="ul-job-details-container">
-              {skills.map(eachItem => (
-                <li className="li-job-details-container" key={eachItem.name}>
-                  <img
-                    className="skill-img"
-                    src={eachItem.imageUrl}
-                    alt={eachItem.name}
-                  />
-                  <p>{eachItem.name}</p>
-                </li>
+            <h1 className="similar-jobs-heading">Similar Jobs</h1>
+            <ul className="similar-jobs-ul-container">
+              {similarJobsData.map(eachItem => (
+                <SimilarJobs
+                  key={eachItem.id}
+                  similarJobData={eachItem}
+                  employmentType={jobDataDetails[0].employmentType}
+                />
               ))}
             </ul>
-            <div className="company-life-img-container">
-              <div className="life-heading-para-container">
-                <h1>Life at Company</h1>
-                <p>{lifeAtCompany.description}</p>
-              </div>
-              <img src={lifeAtCompany.imageUrl} alt="life at company" />
-            </div>
           </div>
-          <h1 className="similar-jobs-heading">Similar Jobs</h1>
-          <ul className="similar-jobs-ul-container">
-            {similarJobsData.map(eachItem => (
-              <SimilarJobs
-                key={eachItem.id}
-                similarJobData={eachItem}
-                employmentType={jobDataDetails[0].employmentType}
-              />
-            ))}
-          </ul>
         </>
       )
     }
